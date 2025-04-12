@@ -9,11 +9,22 @@ class Router
         // Poprawiamy dopasowanie ścieżki, dodajemy odpowiednie escape'owanie
         $path = preg_replace('/\{([a-zA-Z0-9_]+)\}/', '(?P<$1>[^/]+)', $path);
         $path = '#^' . str_replace('/', '\/', $path) . '$#';
+
         $this->routes[] = [
             'method' => strtoupper($method),
             'path' => $path,
             'handler' => $handler,
         ];
+    }
+
+    private function getRouteByPath(string $name)
+    {
+        foreach ($this->routes as $route) {
+            if (isset($route['path']) && $route['path'] === $name) {
+                return $route;
+            }
+        }
+        return null;
     }
 
     public function handleRequest()
@@ -42,6 +53,11 @@ class Router
         }
 
         http_response_code(404);
-        echo "404 Not Found";
+        $notFoundRoute = $this->getRouteByPath('#^\/404$#');
+        if ($notFoundRoute) {
+            call_user_func($notFoundRoute['handler']);
+        } else {
+            echo "404 Not Found";
+        }
     }
 }

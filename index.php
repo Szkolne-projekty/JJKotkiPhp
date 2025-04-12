@@ -8,4 +8,8 @@ $router->addRoute('GET', '/', function () {
     require 'views/main/MainPage.php';
 });
 
+$router->addRoute('GET', '/404', function () {
+    require 'views/errors/NotFoundPage.php';
+});
+
 $router->handleRequest();
