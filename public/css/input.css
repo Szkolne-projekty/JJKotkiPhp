@@ -2,3 +2,23 @@
 @plugin "daisyui" {
     themes: retro --default;
 }
+
+html {
+    @apply scroll-smooth;
+}
+
+@layer utilities {
+    .square-header {
+        @apply relative;
+        padding-left: 1em;
+    }
+
+    .square-header::before {
+        content: "";
+        @apply absolute left-0 bg-base-content rounded-sm;
+        width: 0.6em;
+        height: 0.6em;
+        top: 50%;
+        transform: translateY(-0.26em);
+    }
+}
