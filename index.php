@@ -12,6 +12,10 @@ $router->addRoute('GET', '/facts', function () {
     require 'views/facts/FactsPage.php';
 });
 
+$router->addRoute('GET', '/photos', function () {
+    require 'views/photos/PhotosPage.php';
+});
+
 $router->addRoute('GET', '/404', function () {
     require 'views/errors/NotFoundPage.php';
 });
