@@ -34,6 +34,7 @@ $randomFact = $catFacts[array_rand($catFacts)];
         <a href="/facts" class="btn max-w-fit">Więcej ciekawostek</a>
     </section>
 
+    <?php require 'views/base/Footer.php' ?>
 </body>
 
 </html>

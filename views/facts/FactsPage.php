@@ -26,6 +26,8 @@ $catFacts = file('catfacts.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
             <?php endforeach; ?>
         </ol>
     </section>
+
+    <?php require 'views/base/Footer.php' ?>
 </body>
 
 </html>
