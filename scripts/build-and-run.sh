@@ -8,7 +8,7 @@ set -e
 # === CONFIG ===
 IMAGE_NAME="kotki"
 CONTAINER_NAME="kotki"
-HOST_PORT=8080
+HOST_PORT=6969
 CONTAINER_PORT=80
 
 echo "📦 Building Docker image: $IMAGE_NAME"
