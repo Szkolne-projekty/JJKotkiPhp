@@ -29,7 +29,7 @@ $randomFact = $catFacts[array_rand($catFacts)];
 
     <!-- Fact of the day section -->
     <section class="mx-8 md:mx-20 my-8 flex flex-col gap-4" id="fact-of-the-day">
-        <h2 class="square-header text-3xl md:text-4xl font-bold">Ciekawostka Dnia</h2>
+        <h2 class="square-header text-3xl md:text-4xl font-bold">Ciekawostka dnia</h2>
         <p class="md:text-xl"><?php echo $randomFact; ?></p>
         <a href="/facts" class="btn max-w-fit">Więcej ciekawostek</a>
     </section>
