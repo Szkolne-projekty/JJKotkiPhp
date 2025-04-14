@@ -16,14 +16,6 @@ if (count($images) >= 4) {
     $randomImages = $images;
 }
 
-/* usort($randomImages, function ($a, $b) {
-    return getimagesize($b)[1] <=> getimagesize($a)[1];
-});
-
-$tallestImage = array_shift($randomImages);
-shuffle($randomImages);
-array_unshift($randomImages, $tallestImage); */
-
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +47,7 @@ array_unshift($randomImages, $tallestImage); */
         <ul class="list-disc list-inside ml-5 md:ml-7">
             <li class="md:text-xl list-style"><?php echo $randomFact; ?></li>
         </ul>
-        <a href=" /facts" class="btn max-w-fit">Więcej ciekawostek</a>
+        <a href=" /facts" class="btn btn-block sm:max-w-fit">Więcej ciekawostek</a>
     </section>
 
     <!-- Gallery section -->
@@ -68,7 +60,7 @@ array_unshift($randomImages, $tallestImage); */
                 </div>
             <?php endforeach; ?>
         </div>
-        <div class="flex items-center justify-center"><a href=" /photos" class="btn max-w-fit">Więcej zdjęć</a></div>
+        <a href=" /photos" class="btn btn-block sm:max-w-fit">Więcej zdjęć</a>
     </section>
 
     <?php require 'views/base/Footer.php' ?>
