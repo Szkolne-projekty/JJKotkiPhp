@@ -1,3 +1,4 @@
+<!-- Header opiera się o przykład z daisyUI (https://daisyui.com/components/navbar/#responsive-dropdown-menu-on-small-screen-center-menu-on-large-screen) -->
 <div class="drawer z-20">
     <input id="nav-drawer" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content flex flex-col">
@@ -5,6 +6,7 @@
         <div class="navbar bg-base-300 w-fullpx-8 md:px-20">
             <div class="flex-none lg:hidden">
                 <label for="nav-drawer" aria-label="open sidebar" class="btn btn-square btn-ghost">
+                    <!-- Ikona menu -->
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -21,7 +23,7 @@
             <div class="mx-2 flex-1 text-2xl md:text-3xl font-bold"><a href="/">Kotki</a></div>
             <div class="hidden flex-none lg:block">
                 <ul class="menu menu-horizontal">
-                    <!-- Navbar menu content here -->
+                    <!-- Zawartość navbaru -->
                     <li><a href="/facts">Ciekawostki</a></li>
                     <li><a href="/blog">Blog</a></li>
                     <li><a href="/photos">Zdjęcia</a></li>
@@ -30,9 +32,10 @@
         </div>
     </div>
     <div class="drawer-side z-20">
+        <!-- Sidebar -->
         <label for="nav-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
         <ul class="menu bg-base-200 min-h-full w-80 p-4">
-            <!-- Sidebar content here -->
+            <!-- Zawartość sidebaru -->
             <li><a href="/facts">Ciekawostki</a></li>
             <li><a href="/blog">Blog</a></li>
             <li><a href="/photos">Zdjęcia</a></li>

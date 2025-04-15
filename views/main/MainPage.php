@@ -6,6 +6,7 @@ $randomFact = $catFacts[array_rand($catFacts)];
 
 $images = file('imagesForLanding.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
+/* Tworzenie tablicy losowych 4 zdjęć */
 $randomImages = [];
 if (count($images) >= 4) {
     $randomKeys = array_rand($images, 4);
@@ -31,7 +32,7 @@ if (count($images) >= 4) {
 <body>
     <?php require 'views/base/Header.php' ?>
 
-    <!-- Landing section -->
+    <!-- Sekcja początkowa -->
     <section class="relative bg-[url(/public/images/cat.avif)] bg-cover bg-center h-[80vh] flex items-center justify-center">
         <div class="absolute w-[100vw] h-[80vh] bg-[#000] opacity-30"></div>
         <div class="form-control flex flex-col items-center justify-center gap-2 md:gap-4 z-10 text-base-100">
@@ -41,7 +42,7 @@ if (count($images) >= 4) {
         </div>
     </section>
 
-    <!-- Fact of the day section -->
+    <!-- Sekcja ciekawostki dnia -->
     <section class="mx-8 md:mx-20 my-8 flex flex-col gap-4" id="fact-of-the-day">
         <h2 class="square-header text-3xl md:text-4xl font-bold">Ciekawostka dnia</h2>
         <ul class="list-disc list-inside ml-5 md:ml-7">
@@ -50,7 +51,7 @@ if (count($images) >= 4) {
         <a href=" /facts" class="btn btn-block sm:max-w-fit">Więcej ciekawostek</a>
     </section>
 
-    <!-- Gallery section -->
+    <!-- Sekcja galerii zdjęć -->
     <section class="mx-8 md:mx-20 my-8 flex flex-col gap-4">
         <h2 class="square-header text-3xl md:text-4xl font-bold">Galeria zdjęć</h2>
         <div class="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-2">

@@ -2,6 +2,7 @@
 
 require_once 'lib/Router.php';
 
+/* Inicjalizacja routera */
 $router = new Router();
 
 $router->addRoute('GET', '/', function () {

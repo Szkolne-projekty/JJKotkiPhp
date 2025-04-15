@@ -16,9 +16,11 @@ $images = glob("public/images/cats/*.*");
 <body>
     <?php require 'views/base/Header.php'; ?>
 
+
     <section class="mx-8 md:mx-20 my-8 flex flex-col gap-4">
         <h1 class="square-header text-3xl md:text-4xl font-bold">Galeria zdjęć</h1>
 
+        <!-- Galeria zdjęć -->
         <div class="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-2">
             <?php foreach ($images as $image) : ?>
                 <div class="break-inside-avoid mb-2 rounded-lg shadow-lg overflow-hidden">
