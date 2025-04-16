@@ -39,7 +39,6 @@ public/images/cats/PXL_20241102_225256375.jpg
 public/images/cats/PXL_20241104_185056674.jpg
 public/images/cats/PXL_20241205_063747851.jpg
 public/images/cats/PXL_20241221_112213102.jpg
-public/images/cats/PXL_20241221_204826822.jpg
 public/images/cats/PXL_20241231_115453171.jpg
 public/images/cats/PXL_20241231_183701040.jpg
 public/images/cats/PXL_20241231_223817207.jpg
