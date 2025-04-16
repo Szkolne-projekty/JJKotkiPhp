@@ -2,6 +2,8 @@
 
 $images = glob("public/images/cats/*.*");
 
+shuffle($images);
+
 ?>
 
 <!DOCTYPE html>
