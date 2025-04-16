@@ -17,7 +17,6 @@ public/images/cats/PXL_20240930_145107718.jpg
 public/images/cats/PXL_20240930_192836049.jpg
 public/images/cats/PXL_20241001_041503777.jpg
 public/images/cats/PXL_20241001_051810363.jpg
-public/images/cats/PXL_20241001_095258843.MP.jpg
 public/images/cats/PXL_20241001_095301497.jpg
 public/images/cats/PXL_20241002_121711993.MP.jpg
 public/images/cats/PXL_20241002_160838356.jpg
@@ -35,7 +34,6 @@ public/images/cats/PXL_20241024_054322884.jpg
 public/images/cats/PXL_20241030_064221815.MP.jpg
 public/images/cats/PXL_20241101_215439755.jpg
 public/images/cats/PXL_20241101_215456115.jpg
-public/images/cats/PXL_20241102_225256375.jpg
 public/images/cats/PXL_20241104_185056674.jpg
 public/images/cats/PXL_20241205_063747851.jpg
 public/images/cats/PXL_20241221_112213102.jpg
