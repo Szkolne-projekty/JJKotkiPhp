@@ -66,7 +66,6 @@ public/images/cats/PXL_20250214_213654525.jpg
 public/images/cats/PXL_20250223_135149501.jpg
 public/images/cats/PXL_20250225_202323091.jpg
 public/images/cats/PXL_20250226_143041143.jpg
-public/images/cats/PXL_20250302_195512818.jpg
 public/images/cats/PXL_20250303_064559121.jpg
 public/images/cats/PXL_20250305_124420989.jpg
 public/images/cats/PXL_20250306_135716896.jpg
