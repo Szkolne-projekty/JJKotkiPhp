@@ -2,3 +2,4 @@ public/css/output.css
 node_modules
 package-lock.json
 .env
+docker-compose.yml
