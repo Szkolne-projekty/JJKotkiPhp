@@ -1,5 +1,8 @@
 <?php
 
+require_once __DIR__ . '/lib/Database.php';
+require_once __DIR__ . '/lib/Utils.php';
+
 require_once __DIR__ . '/router.php';
 
 // ##################################################
