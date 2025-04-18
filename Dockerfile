@@ -13,7 +13,6 @@ RUN chown -R www-data:www-data /var/www/html \
 RUN docker-php-ext-install mysqli pdo pdo_mysql && a2enmod rewrite
 
 WORKDIR /var/www/html
-RUN npm install && npm run build
 
 EXPOSE 80
 
