@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require_once __DIR__ . '/lib/Database.php';
 require_once __DIR__ . '/lib/Utils.php';
 
@@ -27,7 +29,6 @@ get('/register', 'views/auth/RegisterPage.php');
 
 // Wylogowanie
 get('/logout', function () {
-    session_start();
 
     unset($_SESSION);
     session_destroy();

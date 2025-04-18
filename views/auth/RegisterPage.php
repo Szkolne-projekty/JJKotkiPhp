@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 if (Utils::isLoggedIn()) {
     Utils::redirect('/');
 }
