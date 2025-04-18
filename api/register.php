@@ -59,9 +59,22 @@ $stmt->execute([
     'username' => $username,
     'password' => $hashedPassword
 ]);
+
+/* Pobranie ID nowego użytkownika */
+$stmt = $pdo->prepare('SELECT * FROM users WHERE username = :username');
+$stmt->execute(['username' => $username]);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-$_SESSION['user_id'] = $user["id"];
+if ($user) {
+    $_SESSION['user_id'] = $user["id"];
+    Utils::redirect('/');
+    exit();
+} else {
+    // Handle the case where the user was not found (e.g., show an error or handle as needed)
+    Utils::redirect('/register?error=unexpected_error');
+    exit();
+}
+
 
 Utils::redirect('/');
 exit();
