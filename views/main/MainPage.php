@@ -48,7 +48,7 @@ if (count($images) >= 4) {
         <ul class="list-disc list-inside ml-5 md:ml-7">
             <li class="md:text-xl list-style"><?php echo $randomFact; ?></li>
         </ul>
-        <a href=" /facts" class="btn btn-block sm:max-w-fit">Więcej ciekawostek</a>
+        <a href="/facts" class="btn btn-block sm:max-w-fit">Więcej ciekawostek</a>
     </section>
 
     <!-- Sekcja galerii zdjęć -->
@@ -61,7 +61,7 @@ if (count($images) >= 4) {
                 </div>
             <?php endforeach; ?>
         </div>
-        <a href=" /photos" class="btn btn-block sm:max-w-fit">Więcej zdjęć</a>
+        <a href="/photos" class="btn btn-block sm:max-w-fit">Więcej zdjęć</a>
     </section>
 
     <?php require 'views/base/Footer.php' ?>
