@@ -1,9 +1,6 @@
 <?php
 session_start();
 
-require 'lib/Database.php';
-require 'lib/Utils.php';
-
 if (Utils::isLoggedIn()) {
     Utils::redirect('/');
 }
