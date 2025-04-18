@@ -1,24 +1,51 @@
 <?php
 
-require_once 'lib/Router.php';
+require_once __DIR__ . '/router.php';
 
-/* Inicjalizacja routera */
-$router = new Router();
+// ##################################################
+// ##################################################
+// ##################################################
+// Routy z GET
 
-$router->addRoute('GET', '/', function () {
-    require 'views/main/MainPage.php';
+// Index
+get('/', 'views/main/MainPage.php');
+
+// Strona z ciekawostkami
+get('/facts', 'views/facts/FactsPage.php');
+
+// Strona z galerią zdjęć
+get('/photos', 'views/photos/PhotosPage.php');
+
+// Strona logowania
+get('/login', 'views/auth/LoginPage.php');
+
+// Strona rejestracji
+get('/register', 'views/auth/RegisterPage.php');
+
+// Wylogowanie
+get('/logout', function () {
+    session_start();
+
+    unset($_SESSION);
+    session_destroy();
+
+    header('Location: /');
+    exit();
 });
 
-$router->addRoute('GET', '/facts', function () {
-    require 'views/facts/FactsPage.php';
-});
 
-$router->addRoute('GET', '/photos', function () {
-    require 'views/photos/PhotosPage.php';
-});
+// ##################################################
+// ##################################################
+// ##################################################
+// Routy z POST
+post('/login', '/api/login.php');
 
-$router->addRoute('GET', '/404', function () {
-    require 'views/errors/NotFoundPage.php';
-});
+post('/register', '/api/register.php');
 
-$router->handleRequest();
+
+// ##################################################
+// ##################################################
+// ##################################################
+// Routy any
+
+any('/404', 'views/errors/NotFoundPage.php');
