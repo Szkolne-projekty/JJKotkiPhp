@@ -1,4 +1,6 @@
 <?php
+global $pdo;
+
 session_start();
 
 if (Utils::isLoggedIn()) {

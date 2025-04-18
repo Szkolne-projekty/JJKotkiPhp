@@ -1,4 +1,6 @@
 <?php
+global $pdo;
+
 session_start();
 
 if (Utils::isLoggedIn()) {
@@ -12,8 +14,14 @@ if (!$username || !$password) {
     Utils::redirect('/register?error=missing_fields');
     exit();
 }
-if (strlen($username) < 3 || strlen($username) > 50) {
-    Utils::redirect('/register?error=invalid_username');
+
+if (strlen($username) < 4) {
+    Utils::redirect('/register?error=username_too_short');
+    exit();
+}
+
+if (strlen($username) > 50) {
+    Utils::redirect('/register?error=username_too_long');
     exit();
 }
 
@@ -22,11 +30,15 @@ if (!preg_match('/^[a-zA-Z0-9_]+$/', $username)) {
     exit();
 }
 
-if (strlen($password) < 4 || strlen($password) > 50) {
-    Utils::redirect('/register?error=invalid_password');
+if (strlen($password) < 4) {
+    Utils::redirect('/register?error=password_too_short');
     exit();
 }
 
+if (strlen($password) > 200) {
+    Utils::redirect('/register?error=password_too_long');
+    exit();
+}
 
 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
