@@ -33,7 +33,7 @@ if (count($images) >= 4) {
     <?php require 'views/base/Header.php' ?>
 
     <!-- Sekcja początkowa -->
-    <section class="relative bg-[url(/public/images/cat.avif)] bg-cover bg-center h-[80vh] flex items-center justify-center">
+    <section class="relative bg-base-300 bg-[url(/public/images/cat.avif)] bg-cover bg-center h-[80vh] flex items-center justify-center">
         <div class="absolute w-[100vw] h-[80vh] bg-[#000] opacity-30"></div>
         <div class="form-control flex flex-col items-center justify-center gap-2 md:gap-4 z-10 text-base-100">
             <h1 class="text-4xl md:text-6xl font-bold z-10">Kotki</h1>
