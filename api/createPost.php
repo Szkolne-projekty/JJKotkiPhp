@@ -19,8 +19,6 @@ $content = $_POST['content'] ?? null;
 
 $author = $_SESSION['user_id'] ?? null;
 
-var_dump($_FILES["image"]);
-
 $image = $_FILES["image"];
 
 if (!isset($image) || $image['error'] !== UPLOAD_ERR_OK) {
