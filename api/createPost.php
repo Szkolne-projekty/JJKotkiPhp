@@ -68,35 +68,28 @@ if (!move_uploaded_file($image["tmp_name"], $targetFile)) {
 /* Sprawdzenie poprawności pozostałych danych */
 if (!$title || !$content) {
     Utils::redirect('/post/create?error=missing_fields');
-    echo "1";
     exit();
 }
 
 if (strlen($title) < 4) {
     Utils::redirect('/post/create?error=title_too_short');
-    echo "2";
     exit();
 }
 
 if (strlen($title) > 255) {
     Utils::redirect('/post/create?error=title_too_long');
-    echo "3";
     exit();
 }
 
 if (strlen($content) < 4) {
     Utils::redirect('/post/create?error=content_too_short');
-    echo "4";
     exit();
 }
 
 if (strlen($content) > 10000) {
     Utils::redirect('/post/create?error=content_too_long');
-    echo "5";
     exit();
 }
-
-echo "6";
 
 /* Dodanie posta do bazy danych */
 $stmt = $pdo->prepare('
@@ -110,8 +103,4 @@ $stmt->execute([
     'image_path' => $targetFile
 ]);
 
-echo "7";
-
 Utils::redirect('/posts?success=post_created');
-
-echo "8";
