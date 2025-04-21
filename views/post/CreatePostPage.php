@@ -1,3 +1,12 @@
+<?php
+
+if (!Utils::hasPermission('create_post')) {
+    Utils::redirect('/');
+    exit();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
 
