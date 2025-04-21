@@ -35,6 +35,7 @@ if ($error === "invalid_credentials") {
                 </div>
                 <input type="text" placeholder="jkowalski" name="username" class="input input-bordered w-full" />
             </label>
+
             <label class="form-control w-full">
                 <div class="label">
                     <span class="label-text">Hasło</span>
@@ -45,6 +46,7 @@ if ($error === "invalid_credentials") {
                     name="password"
                     class="input input-bordered w-full" />
             </label>
+
             <?php if ($showInvalidCredentialsError): ?>
                 <p class="text-error text-sm">Niepoprawne dane logowania!</p>
             <?php endif; ?>
