@@ -13,7 +13,7 @@ $stmt = $pdo->prepare('SELECT * FROM users WHERE username = :username');
 $stmt->execute(['username' => $username]);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-/* Prymitywne sprawdzanie prawdziwości danych */
+/* Sprawdzanie prawdziwości danych */
 if ($user && password_verify($password, $user["password"])) {
     $_SESSION['user_id'] = $user['id'];
     Utils::redirect('/');
