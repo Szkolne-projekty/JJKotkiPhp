@@ -1,4 +1,5 @@
 <?php
+global $pdo;
 
 /* Ciekawostka dnia */
 $catFacts = file('catfacts.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
@@ -24,6 +25,14 @@ if (count($images) >= 4) {
 } else {
     $randomImages = $images;
 }
+
+$stmt = $pdo->prepare('
+    SELECT id, title, image FROM posts
+    ORDER BY created_at DESC
+    LIMIT 3
+');
+$stmt->execute();
+$posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
@@ -57,6 +66,28 @@ if (count($images) >= 4) {
             <li class="md:text-xl list-style"><?php echo $factOfTheDay; ?></li>
         </ul>
         <a href="/facts" class="btn btn-block sm:max-w-fit">Więcej ciekawostek</a>
+    </section>
+
+    <!-- Sekcja blogu -->
+    <section class="mx-8 md:mx-20 my-8 flex flex-col gap-4">
+        <h2 class="square-header text-3xl md:text-4xl font-bold">Najnowsze posty</h2>
+
+        <div class="flex flex-col sm:flex-row gap-4 md:px-16">
+            <?php foreach ($posts as $post): ?>
+                <a href="/post/<?php echo $post["id"]; ?>" class="card bg-base-200 shadow-sm h-96 grow shrink basis-0">
+                    <figure>
+                        <img
+                            src="/<?php echo $post['image']; ?>"
+                            alt="Zdjęcie postu" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title"><?php echo $post['title']; ?></h2>
+                    </div>
+                </a>
+            <?php endforeach; ?>
+        </div>
+
+        <a href="/blog" class="btn btn-block sm:max-w-fit">Więcej postów</a>
     </section>
 
     <!-- Sekcja galerii zdjęć -->
