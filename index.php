@@ -37,6 +37,8 @@ get('/logout', function () {
     exit();
 });
 
+get('/post/create', 'views/post/CreatePostPage.php');
+
 
 // ##################################################
 // ##################################################
@@ -45,6 +47,10 @@ get('/logout', function () {
 post('/login', '/api/login.php');
 
 post('/register', '/api/register.php');
+
+post('/post/create', '/api/createPost.php');
+post('/post/edit', '/api/editPost.php');
+post('/post/delete', '/api/deletePost.php');
 
 
 // ##################################################
