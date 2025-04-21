@@ -10,6 +10,12 @@ Projekt miał polegać na stworzeniu strony internetowej z elementami języka PH
 -   [daisyUI](https://daisyui.com/) (biblioteka ui)
 -   [Docker](https://www.docker.com/) (konteneryzacja w celu prostszego uruchomienia na produkcji)
 
+## Inne pomoce
+
+-   [Router](https://github.com/phprouter/main)
+-   [Parser Markdowna](https://github.com/erusev/parsedown)
+-   [Generowanie UUID](https://www.uuidgenerator.net/dev-corner/php)
+
 ## Zrzuty ekranu
 
 ![Landing page](https://raw.githubusercontent.com/Szkolne-projekty/JJKotkiPhp/refs/heads/main/assets/landing.png)
