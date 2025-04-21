@@ -1,5 +1,6 @@
 public/css/output.css
 node_modules
+uploads
 package-lock.json
 .env
 docker-compose.yml
