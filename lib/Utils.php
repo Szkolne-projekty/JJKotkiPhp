@@ -15,12 +15,12 @@ class Utils
 
     public static function hasPermission($permission_name)
     {
-        global $pdo;
-        $user_id = $_SESSION['user_id'] ?: null;
-
-        if (!$user_id) {
+        if (!Utils::isLoggedIn()) {
             return false;
         }
+
+        global $pdo;
+        $user_id = $_SESSION['user_id'] ?: null;
 
         $stmt = $pdo->prepare('
             SELECT COUNT(*) FROM role_permissions
