@@ -95,7 +95,7 @@ $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <h2 class="square-header text-3xl md:text-4xl font-bold">Galeria zdjęć</h2>
         <div class="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-2">
             <?php foreach ($randomImages as $image) : ?>
-                <div class="image-container break-inside-avoid mb-2 rounded-lg shadow-lg overflow-hidden">
+                <div class="image-container break-inside-avoid mb-2 rounded-lg shadow-sm overflow-hidden">
                     <img src="/<?= $image ?>" alt="Kotek" class="w-full h-auto">
                 </div>
             <?php endforeach; ?>
