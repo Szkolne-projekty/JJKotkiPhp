@@ -8,6 +8,11 @@ if (!Utils::isLoggedIn()) {
     exit();
 }
 
+/* Sprawdzanie CSRF */
+if (!is_csrf_valid()) {
+    die("no u");
+}
+
 if (!Utils::hasPermission('create_post')) {
     Utils::redirect('/');
     exit();

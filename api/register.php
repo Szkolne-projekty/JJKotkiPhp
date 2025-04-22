@@ -5,6 +5,11 @@ if (Utils::isLoggedIn()) {
     Utils::redirect('/');
 }
 
+/* Sprawdzanie CSRF */
+if (!is_csrf_valid()) {
+    die("no u");
+}
+
 $username = $_POST['username'] ?: null;
 $password = $_POST['password'] ?: null;
 

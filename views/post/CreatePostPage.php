@@ -23,6 +23,8 @@ if (!Utils::hasPermission('create_post')) {
         <h1 class="text-3xl md:text-4xl font-bold">Stwórz post</h1>
 
         <form action="/post/create" method="post" class="fieldset max-w-xs md:max-w-md w-full" enctype="multipart/form-data">
+            <?php set_csrf() ?>
+
             <legend class="fieldset-legend w-full">Tytuł postu</legend>
             <input type="text" class="input w-full" name="title" placeholder="Czym karmić kota?" />
 

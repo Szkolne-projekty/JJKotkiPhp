@@ -36,6 +36,8 @@ $errorMessage = $errors[$error] ?? null;
     <section class="absolute left-0 min-w-screen flex flex-col min-h-[100dvh] items-center justify-center">
         <h1 class="text-3xl font-bold md:text-4xl">Rejestracja</h1>
         <form action="/register" method="post" class="flex w-full max-w-xs flex-col gap-2 md:max-w-md">
+            <?php set_csrf() ?>
+
             <label class="form-control w-full">
                 <div class="label">
                     <span class="label-text">Login</span>
