@@ -12,6 +12,7 @@ if (!is_csrf_valid()) {
 
 $username = $_POST['username'] ?: null;
 $password = $_POST['password'] ?: null;
+$displayName = $_POST['display_name'] ?: null;
 
 if (!$username || !$password) {
     Utils::redirect('/register?error=missing_fields');
@@ -30,6 +31,21 @@ if (strlen($username) > 50) {
 
 if (!preg_match('/^[a-zA-Z0-9_]+$/', $username)) {
     Utils::redirect('/register?error=invalid_username');
+    exit();
+}
+
+if (strlen($displayName) < 4) {
+    Utils::redirect('/register?error=display_name_too_short');
+    exit();
+}
+
+if (strlen($displayName) > 50) {
+    Utils::redirect('/register?error=display_name_too_long');
+    exit();
+}
+
+if (!preg_match('/^[a-zA-Z0-9_]+$/', $displayName)) {
+    Utils::redirect('/register?error=invalid_display_name');
     exit();
 }
 
@@ -57,11 +73,12 @@ if ($user) {
 
 /* Dodanie użytkownika do bazy danych */
 $stmt = $pdo->prepare('
-    INSERT INTO users (username, password)
-    VALUES (:username, :password)
+    INSERT INTO users (username, display_name, password)
+    VALUES (:username, :display_name, :password)
 ');
 $stmt->execute([
     'username' => $username,
+    'display_name' => $displayName,
     'password' => $hashedPassword
 ]);
 

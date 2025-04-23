@@ -15,6 +15,9 @@ $errors = [
     "username_too_long" => "Nazwa użytkownika może mieć maksymalnie 50 znaków",
     "password_too_short" => "Hasło musi mieć minimum 4 znaki",
     "password_too_long" => "Hasło może mieć maksymalnie 200 znaków",
+    "invalid_display_name" => "Niepoprawna nazwa wyświetlana",
+    "display_name_too_short" => "Nazwa wyświetlana musi mieć minimum 4 znaki",
+    "display_name_too_long" => "Nazwa wyświetlana może mieć maksymalnie 50 znaków",
 ];
 
 $errorMessage = $errors[$error] ?? null;
@@ -44,6 +47,14 @@ $errorMessage = $errors[$error] ?? null;
                 </div>
                 <input type="text" placeholder="jkowalski" name="username" class="input input-bordered w-full" />
             </label>
+
+            <label class="form-control w-full">
+                <div class="label">
+                    <span class="label-text">Wyświetlana nazwa</span>
+                </div>
+                <input type="text" placeholder="Jan Kowalski" name="display_name" class="input input-bordered w-full" />
+            </label>
+
             <label class="form-control w-full">
                 <div class="label">
                     <span class="label-text">Hasło</span>
