@@ -10,7 +10,7 @@ $isLoggedIn = Utils::isLoggedIn();
     <div class="drawer-content flex flex-col">
         <!-- Navbar -->
         <div class="navbar bg-base-300 w-fullpx-8 md:px-20">
-            <div class="flex-none lg:hidden">
+            <div class="flex-none md:hidden">
                 <label for="nav-drawer" aria-label="open sidebar" class="btn btn-square btn-ghost">
                     <!-- Ikona menu -->
                     <svg
@@ -27,7 +27,7 @@ $isLoggedIn = Utils::isLoggedIn();
                 </label>
             </div>
             <div class="mx-2 flex-1 text-2xl md:text-3xl font-bold"><a href="/">Kotki</a></div>
-            <div class="hidden flex-none lg:block">
+            <div class="hidden flex-none md:block">
                 <ul class="menu menu-horizontal">
                     <!-- Zawartość navbaru -->
                     <li><a href="/facts">Ciekawostki</a></li>
