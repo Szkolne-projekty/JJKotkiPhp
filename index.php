@@ -2,6 +2,7 @@
 
 error_reporting(0);
 ini_set('display_errors', 0);
+setlocale(LC_TIME, 'pl_PL.UTF-8');
 
 session_start();
 
