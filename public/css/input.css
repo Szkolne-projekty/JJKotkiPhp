@@ -21,4 +21,37 @@ html {
         top: 50%;
         transform: translateY(-0.26em);
     }
+
+    /* Markdown */
+    .markdown ol {
+        @apply list-decimal list-inside;
+    }
+
+    .markdown ul {
+        @apply list-disc list-inside;
+    }
+
+    .markdown h1 {
+        @apply text-3xl font-bold mb-2;
+    }
+
+    .markdown h2 {
+        @apply text-2xl font-bold;
+    }
+
+    .markdown h3 {
+        @apply text-xl font-bold;
+    }
+
+    .markdown h4 {
+        @apply text-lg font-bold;
+    }
+
+    .markdown h5 {
+        @apply text-base font-bold;
+    }
+
+    .markdown h6 {
+        @apply text-sm font-bold;
+    }
 }

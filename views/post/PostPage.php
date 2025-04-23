@@ -3,7 +3,7 @@ global $pdo;
 
 require 'lib/Markdown.php';
 
-$stmt = $pdo->prepare("SELECT p.title, p.image, UNIX_TIMESTAMP(p.created_at) as created_at, u.display_name as author FROM posts p INNER JOIN users u ON p.author = u.id WHERE p.id = :id");
+$stmt = $pdo->prepare("SELECT p.title, p.image, p.content, UNIX_TIMESTAMP(p.created_at) as created_at, u.display_name as author FROM posts p INNER JOIN users u ON p.author = u.id WHERE p.id = :id");
 $stmt->execute(['id' => $id]);
 $post = $stmt->fetch(PDO::FETCH_ASSOC);
 if (!$post) {
@@ -35,6 +35,10 @@ $year = $date->format('Y');
 
 $dateString = "$day {$polskieMiesiace[$month]} $year";
 
+$markdown = new Markdown();
+
+$contentHtml = $markdown->text($post['content']);
+
 ?>
 
 <!DOCTYPE html>
@@ -65,7 +69,9 @@ $dateString = "$day {$polskieMiesiace[$month]} $year";
     </section>
 
     <!-- Zawartość postu -->
-    <section class=""></section>
+    <section class="md:mx-[calc(10%+64px)] mx-[5%] w-[90%] md:w-[calc(80%-160px+2rem)] p-4 markdown">
+        <?php echo $contentHtml; ?>
+    </section>
 
     <div class="fixed bottom-0 left-0 w-full"><?php require 'views/base/Footer.php'; ?></div>
 </body>
