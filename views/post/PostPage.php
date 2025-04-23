@@ -69,11 +69,11 @@ $contentHtml = $markdown->text($post['content']);
     </section>
 
     <!-- Zawartość postu -->
-    <section class="md:mx-[calc(10%+64px)] mx-[5%] w-[90%] md:w-[calc(80%-160px+2rem)] p-4 markdown">
+    <section class="md:mx-[calc(10%+64px)] mx-[5%] w-[90%] md:w-[calc(80%-160px+2rem)] min-h-[calc(100vh-449px)] md:min-h-[calc(100vh-649px)] p-4 markdown mb-8 ">
         <?php echo $contentHtml; ?>
     </section>
 
-    <div class="fixed bottom-0 left-0 w-full"><?php require 'views/base/Footer.php'; ?></div>
+    <div class="bottom-0 left-0 w-full"><?php require 'views/base/Footer.php'; ?></div>
 </body>
 
 </html>
