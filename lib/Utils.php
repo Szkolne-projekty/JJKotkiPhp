@@ -53,4 +53,19 @@ class Utils
         // Output the 36 character UUID.
         return vsprintf('%s%s-%s-%s-%s-%s%s%s', str_split(bin2hex($data), 4));
     }
+
+    public static $monthNames = [
+        1 => 'stycznia',
+        2 => 'lutego',
+        3 => 'marca',
+        4 => 'kwietnia',
+        5 => 'maja',
+        6 => 'czerwca',
+        7 => 'lipca',
+        8 => 'sierpnia',
+        9 => 'września',
+        10 => 'października',
+        11 => 'listopada',
+        12 => 'grudnia'
+    ];
 }
