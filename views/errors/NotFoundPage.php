@@ -9,7 +9,7 @@
     <?php require 'views/HtmlLib.php'; ?>
 </head>
 
-<body class="bg-[#000] flex min-h-screen items-center justify-center">
+<body class="bg-[#000] flex min-h-[100dvh] items-center justify-center">
     <!-- Taki fajny kotek -->
     <img src="https://http.cat/404.jpg" alt="Not found cat" class="w-[80vw] object-cover h-auto md:w-min ">
 </body>

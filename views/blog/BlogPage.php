@@ -37,7 +37,7 @@ unset($post);
     <?php require 'views/HtmlLib.php'; ?>
 </head>
 
-<body class="flex flex-col min-h-screen">
+<body class="flex flex-col min-h-[100dvh]">
     <?php require 'views/base/Header.php'; ?>
 
     <section class="mx-8 md:mx-20 my-8 flex flex-col gap-4 grow">

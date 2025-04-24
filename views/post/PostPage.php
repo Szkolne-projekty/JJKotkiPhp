@@ -37,7 +37,7 @@ $contentHtml = $markdown->text($post['content']);
     <?php require 'views/HtmlLib.php'; ?>
 </head>
 
-<body class="min-h-screen flex flex-col">
+<body class="min-h-[100dvh] flex flex-col">
     <?php require 'views/base/Header.php'; ?>
 
     <!-- Tytuł i takie tam -->
