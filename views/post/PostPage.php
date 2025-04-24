@@ -50,7 +50,7 @@ $contentHtml = $markdown->text($post['content']);
     <?php require 'views/HtmlLib.php'; ?>
 </head>
 
-<body>
+<body class="min-h-screen flex flex-col">
     <?php require 'views/base/Header.php'; ?>
 
     <!-- Tytuł i takie tam -->
@@ -69,7 +69,7 @@ $contentHtml = $markdown->text($post['content']);
     </section>
 
     <!-- Zawartość postu -->
-    <section class="md:mx-[calc(10%+64px)] mx-[5%] w-[90%] md:w-[calc(80%-160px+2rem)] min-h-[calc(100dvh-449px)] md:min-h-[calc(100dvh-649px)] p-4 markdown mb-8 ">
+    <section class="md:mx-[calc(10%+64px)] mx-[5%] w-[90%] md:w-[calc(80%-160px+2rem)] p-4 markdown flex-grow">
         <?php echo $contentHtml; ?>
     </section>
 
