@@ -22,6 +22,9 @@ get('/', 'views/main/MainPage.php');
 /* Strona z ciekawostkami */
 get('/facts', 'views/facts/FactsPage.php');
 
+/* Strona z blogiem */
+get('/blog', 'views/blog/BlogPage.php');
+
 /* Strona z galerią zdjęć */
 get('/photos', 'views/photos/PhotosPage.php');
 
