@@ -27,12 +27,25 @@ if (count($images) >= 4) {
 }
 
 $stmt = $pdo->prepare('
-    SELECT id, title, image FROM posts
+    SELECT id, title, image, UNIX_TIMESTAMP(created_at) as created_at FROM posts
     ORDER BY created_at DESC
     LIMIT 3
 ');
 $stmt->execute();
 $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+foreach ($posts as &$post) {
+    $date = new DateTime();
+    $date->setTimestamp($post["created_at"]);
+
+    $day = $date->format('j');
+    $month = $date->format('n');
+    $year = $date->format('Y');
+
+    $monthName = Utils::$monthNames[$month];
+    $post["dateString"] = "$day $monthName $year";
+}
+unset($post);
 
 ?>
 
@@ -82,6 +95,7 @@ $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </figure>
                     <div class="card-body">
                         <h2 class="card-title"><?php echo $post['title']; ?></h2>
+                        <p class="text-sm opacity-70"><?php echo $post['dateString']; ?></p>
                     </div>
                 </a>
             <?php endforeach; ?>

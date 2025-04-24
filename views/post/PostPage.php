@@ -14,26 +14,13 @@ if (!$post) {
 $date = new DateTime();
 $date->setTimestamp($post["created_at"]);
 
-$polskieMiesiace = [
-    1 => 'stycznia',
-    2 => 'lutego',
-    3 => 'marca',
-    4 => 'kwietnia',
-    5 => 'maja',
-    6 => 'czerwca',
-    7 => 'lipca',
-    8 => 'sierpnia',
-    9 => 'września',
-    10 => 'października',
-    11 => 'listopada',
-    12 => 'grudnia'
-];
-
 $day = $date->format('j');
 $month = $date->format('n');
 $year = $date->format('Y');
 
-$dateString = "$day {$polskieMiesiace[$month]} $year";
+$monthName = Utils::$monthNames[$month];
+
+$dateString = "$day $monthName $year";
 
 $markdown = new Markdown();
 
