@@ -62,8 +62,8 @@ post('/register', '/api/register.php');
 
 /* Posty */
 post('/post/create', '/api/createPost.php');
-post('/post/edit', '/api/editPost.php');
-post('/post/delete', '/api/deletePost.php');
+post('/post/edit/$id', '/api/editPost.php');
+post('/post/delete/$id', '/api/deletePost.php');
 
 
 // ##################################################
