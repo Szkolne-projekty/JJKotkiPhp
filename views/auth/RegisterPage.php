@@ -33,10 +33,10 @@ $errorMessage = $errors[$error] ?? null;
     <?php require 'views/HtmlLib.php' ?>
 </head>
 
-<body>
-    <div class="absolute top-0 left-0 w-full"><?php require 'views/base/Header.php' ?></div>
+<body class="flex flex-col min-h-[100dvh]">
+    <?php require 'views/base/Header.php' ?>
 
-    <section class="absolute left-0 min-w-screen flex flex-col min-h-[100dvh] items-center justify-center">
+    <section class="flex flex-col items-center justify-center grow">
         <h1 class="text-3xl font-bold md:text-4xl">Rejestracja</h1>
         <form action="/register" method="post" class="flex w-full max-w-xs flex-col gap-2 md:max-w-md">
             <?php set_csrf() ?>
@@ -73,9 +73,7 @@ $errorMessage = $errors[$error] ?? null;
         </form>
     </section>
 
-    <div class="absolute bottom-0 left-0 w-full">
-        <?php require 'views/base/Footer.php' ?>
-    </div>
+    <?php require 'views/base/Footer.php' ?>
 </body>
 
 </html>

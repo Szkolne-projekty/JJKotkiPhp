@@ -23,10 +23,10 @@ if ($error === "invalid_credentials") {
     <?php require 'views/HtmlLib.php' ?>
 </head>
 
-<body>
-    <div class="absolute top-0 left-0 w-full"><?php require 'views/base/Header.php' ?></div>
+<body class="flex flex-col min-h-[100dvh]">
+    <?php require 'views/base/Header.php' ?>
 
-    <section class="absolute left-0 min-w-screen top-0 flex flex-col min-h-[100dvh] items-center justify-center">
+    <section class="flex flex-col grow items-center justify-center">
         <h1 class="text-3xl font-bold md:text-4xl">Logowanie</h1>
         <form action="/login" method="post" class="flex w-full max-w-xs flex-col gap-2 md:max-w-md">
             <?php set_csrf() ?>
@@ -57,9 +57,7 @@ if ($error === "invalid_credentials") {
         </form>
     </section>
 
-    <div class="absolute bottom-0 left-0 w-full">
-        <?php require 'views/base/Footer.php' ?>
-    </div>
+    <?php require 'views/base/Footer.php' ?>
 </body>
 
 </html>
