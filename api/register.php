@@ -44,7 +44,7 @@ if (strlen($displayName) > 50) {
     exit();
 }
 
-if (!preg_match('/^[a-zA-Z0-9_]+$/', $displayName)) {
+if (!preg_match('/^[a-zA-Z0-9_ ]+$/', $displayName)) {
     Utils::redirect('/register?error=invalid_display_name');
     exit();
 }
