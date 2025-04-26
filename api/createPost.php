@@ -108,4 +108,4 @@ $stmt->execute([
     'image_path' => $targetFile
 ]);
 
-Utils::redirect('/posts?success=post_created');
+Utils::redirect('/blog?success=post_created');
