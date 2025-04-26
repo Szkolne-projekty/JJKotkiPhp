@@ -24,11 +24,11 @@ html {
 
     /* Markdown */
     .markdown ol {
-        @apply list-decimal list-inside;
+        @apply list-decimal list-inside mb-2;
     }
 
     .markdown ul {
-        @apply list-disc list-inside;
+        @apply list-disc list-inside mb-2;
     }
 
     .markdown h1 {
@@ -41,5 +41,9 @@ html {
 
     .markdown p {
         @apply mb-2;
+    }
+
+    .markdown hr {
+        @apply my-6;
     }
 }
