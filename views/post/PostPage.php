@@ -3,7 +3,7 @@ global $pdo;
 
 require 'lib/Markdown.php';
 
-$stmt = $pdo->prepare("SELECT p.title, p.image, p.content, UNIX_TIMESTAMP(p.created_at) as created_at, u.display_name as author FROM posts p INNER JOIN users u ON p.author = u.id WHERE p.id = :id");
+$stmt = $pdo->prepare("SELECT p.title, p.image, p.content, UNIX_TIMESTAMP(p.created_at) as created_at, u.display_name as author, p.author as author_id FROM posts p INNER JOIN users u ON p.author = u.id WHERE p.id = :id");
 $stmt->execute(['id' => $id]);
 $post = $stmt->fetch(PDO::FETCH_ASSOC);
 if (!$post) {
@@ -25,6 +25,13 @@ $dateString = "$day $monthName $year";
 $markdown = new Markdown();
 
 $contentHtml = $markdown->text($post['content']);
+
+$hasEditPerms = Utils::hasPermission("edit_post");
+$hasEditAllPerms = Utils::hasPermission("edit_all_posts");
+$hasDeletePerms = Utils::hasPermission("delete_post");
+
+$showEditButton = ($post['author_id'] == $_SESSION['user_id'] && $hasEditPerms) || $hasEditAllPerms;
+$showDeleteButton = ($post['author_id'] == $_SESSION['user_id'] && $hasDeletePerms) || $hasEditAllPerms;
 
 ?>
 
@@ -58,6 +65,21 @@ $contentHtml = $markdown->text($post['content']);
     <!-- Zawartość postu -->
     <section class="md:mx-[calc(10%+64px)] mx-[5%] w-[90%] md:w-[calc(80%-160px+2rem)] p-4 markdown flex-grow">
         <?php echo $contentHtml; ?>
+
+        <!-- Edytowanie i usuwanie -->
+        <?php if ($showDeleteButton || $showEditButton): ?>
+            <div class="flex gap-2 pt-2">
+                <?php if ($showEditButton): ?>
+                    <a href="/post/edit/<?php echo $id; ?>" class="link link-info link-hover text-sm">Edytuj</a>
+                <?php endif; ?>
+                <?php if ($showEditButton && $showDeleteButton): ?>
+                    <span class="text-sm opacity-50">·</span>
+                <?php endif; ?>
+                <?php if ($showDeleteButton): ?>
+                    <a href="/post/delete/<?php echo $id; ?>" class="link link-error link-hover text-sm">Usuń</a>
+                <?php endif; ?>
+            </div>
+        <?php endif; ?>
     </section>
 
     <div class="bottom-0 left-0 w-full"><?php require 'views/base/Footer.php'; ?></div>
