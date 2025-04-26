@@ -108,4 +108,6 @@ $stmt->execute([
     'image_path' => $targetFile
 ]);
 
-Utils::redirect('/blog?success=post_created');
+$postId = $pdo->lastInsertId();
+
+Utils::redirect('/post/' . $postId);
