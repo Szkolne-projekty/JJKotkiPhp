@@ -28,11 +28,10 @@ get('/blog', 'views/blog/BlogPage.php');
 /* Strona z galerią zdjęć */
 get('/photos', 'views/photos/PhotosPage.php');
 
-/* Strona logowania */
+/* Auth */
 get('/login', 'views/auth/LoginPage.php');
-
-/* Strona rejestracji */
 get('/register', 'views/auth/RegisterPage.php');
+get('/profile', 'views/auth/ProfilePage.php');
 
 /* Wylogowanie */
 get('/logout', function () {
