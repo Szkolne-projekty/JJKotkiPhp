@@ -12,6 +12,13 @@ if ($error === "invalid_credentials") {
     $showInvalidCredentialsError = true;
 }
 
+$redirectTo = $_GET['redirect'] ?? null;
+if ($redirectTo) {
+    $redirectTo = htmlspecialchars($redirectTo, ENT_QUOTES, 'UTF-8');
+} else {
+    $redirectTo = '/';
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +37,7 @@ if ($error === "invalid_credentials") {
         <h1 class="text-3xl font-bold md:text-4xl">Logowanie</h1>
         <form action="/login" method="post" class="flex w-full max-w-xs flex-col gap-2 md:max-w-md">
             <?php set_csrf() ?>
+            <input type="hidden" name="redirect" value="<?= $redirectTo; ?>" />
 
             <label class="form-control w-full">
                 <div class="label">

@@ -3,8 +3,13 @@ global $pdo;
 
 $uploadDirectory = Utils::getEnv('UPLOAD_DIR', 'uploads/');
 
+if (!$id) {
+    Utils::redirect('/');
+    exit();
+}
+
 if (!Utils::isLoggedIn()) {
-    Utils::redirect('/login');
+    Utils::redirect('/login?redirect=/post/edit/' . $id);
     exit();
 }
 
@@ -18,10 +23,6 @@ if (!Utils::hasPermission('edit_post')) {
     exit();
 }
 
-if (!$id) {
-    Utils::redirect('/');
-    exit();
-}
 
 $stmt = $pdo->prepare('SELECT * FROM posts WHERE id = ?');
 $stmt->execute([$id]);

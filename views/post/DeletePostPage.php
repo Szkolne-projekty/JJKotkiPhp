@@ -2,17 +2,17 @@
 global $pdo;
 
 if (!$id) {
-    header("Location: /");
+    Utils::redirect('/');
     exit();
 }
 
 if (!Utils::isLoggedIn()) {
-    header("Location: /login?redirect=/post/delete/$id");
+    Utils::redirect('/login?redirect=/post/delete/' . $id);
     exit();
 }
 
 if (!Utils::hasPermission("delete_post")) {
-    header("Location: /");
+    Utils::redirect('/');
     exit();
 }
 
@@ -20,12 +20,12 @@ $stmt = $pdo->prepare("SELECT * FROM posts WHERE id = :id");
 $stmt->execute(['id' => $id]);
 $post = $stmt->fetch(PDO::FETCH_ASSOC);
 if (!$post) {
-    header("Location: /");
+    Utils::redirect('/');
     exit();
 }
 
 if ($post['author'] != $_SESSION['user_id'] && !Utils::hasPermission("delete_all_posts")) {
-    header("Location: /");
+    Utils::redirect('/');
     exit();
 }
 

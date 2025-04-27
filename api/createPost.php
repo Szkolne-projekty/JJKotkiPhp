@@ -4,7 +4,7 @@ global $pdo;
 $uploadDirectory = Utils::getEnv('UPLOAD_DIR', 'uploads/');
 
 if (!Utils::isLoggedIn()) {
-    Utils::redirect('/login');
+    Utils::redirect('/login?redirect=/post/create');
     exit();
 }
 

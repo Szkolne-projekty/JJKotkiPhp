@@ -1,17 +1,18 @@
 <?php
 global $pdo;
 
-if (!Utils::isLoggedIn()) {
-    Utils::redirect('/login');
-    exit();
-}
-
-if (!Utils::hasPermission('delete_post')) {
+if (!$id) {
     Utils::redirect('/');
     exit();
 }
 
-if (!$id) {
+
+if (!Utils::isLoggedIn()) {
+    Utils::redirect('/login?redirect=/post/delete/' . $id);
+    exit();
+}
+
+if (!Utils::hasPermission('delete_post')) {
     Utils::redirect('/');
     exit();
 }
