@@ -26,6 +26,8 @@ foreach ($posts as &$post) {
 }
 unset($post);
 
+$showCreatePostButton = Utils::hasPermission("create_post");
+
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +44,6 @@ unset($post);
 
     <section class="mx-8 md:mx-20 my-8 flex flex-col gap-4 grow">
         <h2 class="square-header text-3xl md:text-4xl font-bold">Blog</h2>
-
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:px-16">
             <?php foreach ($posts as $post): ?>
                 <a href="/post/<?php echo $post["id"]; ?>" class="card bg-base-200 shadow-sm h-96 w-full flex flex-col">
@@ -61,6 +62,20 @@ unset($post);
         </div>
     </section>
 
+    <?php if ($showCreatePostButton): ?>
+        <div class="fixed bottom-4 right-4 md:bottom-8 md:right-8">
+            <a href="/create-post" class="btn btn-primary btn-circle btn-lg md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-icon lucide-plus">
+                    <path d="M5 12h14" />
+                    <path d="M12 5v14" />
+                </svg>
+            </a>
+            <a href="/create-post" class="hidden md:inline-flex btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-icon lucide-plus">
+                    <path d="M5 12h14" />
+                    <path d="M12 5v14" />
+                </svg> Dodaj nowy post</a>
+        </div>
+    <?php endif; ?>
 
     <?php require 'views/base/Footer.php'; ?>
 </body>
