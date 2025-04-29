@@ -63,14 +63,14 @@ $showCreatePostButton = Utils::hasPermission("create_post");
     </section>
 
     <?php if ($showCreatePostButton): ?>
-        <div class="fixed bottom-4 right-4 md:bottom-8 md:right-8">
-            <a href="/create-post" class="btn btn-primary btn-circle btn-lg md:hidden">
+        <div class="fixed bottom-4 right-4 xl:bottom-8 xl:right-8">
+            <a href="/post/create" class="btn btn-primary btn-circle btn-lg md:hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-icon lucide-plus">
                     <path d="M5 12h14" />
                     <path d="M12 5v14" />
                 </svg>
             </a>
-            <a href="/create-post" class="hidden md:inline-flex btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-icon lucide-plus">
+            <a href="/post/create" class="hidden md:inline-flex btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-icon lucide-plus">
                     <path d="M5 12h14" />
                     <path d="M12 5v14" />
                 </svg> Dodaj nowy post</a>
