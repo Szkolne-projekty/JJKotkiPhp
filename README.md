@@ -22,6 +22,26 @@ Projekt miał polegać na stworzeniu strony internetowej z elementami języka PH
 
     ![Landing page](https://raw.githubusercontent.com/Szkolne-projekty/JJKotkiPhp/refs/heads/main/assets/landing.png)
 
+-   Strona blogu
+
+    ![Blog page](https://github.com/Szkolne-projekty/JJKotkiPhp/blob/main/assets/blog_page.png?raw=true)
+
 -   Strona postu z bloga
 
-    ![Blog Page](https://github.com/Szkolne-projekty/JJKotkiPhp/blob/main/assets/post_page.png?raw=true)
+    ![Blog post page](https://github.com/Szkolne-projekty/JJKotkiPhp/blob/main/assets/post_page.png?raw=true)
+
+-   Tworzenie postu
+
+    ![Create post page](https://github.com/Szkolne-projekty/JJKotkiPhp/blob/main/assets/create_post_page.png?raw=true)
+
+-   Edytowanie postu
+
+    ![Edit post page](https://github.com/Szkolne-projekty/JJKotkiPhp/blob/main/assets/edit_post_page.png?raw=true)
+
+-   Usuwanie postu
+
+    ![Delete post page](https://github.com/Szkolne-projekty/JJKotkiPhp/blob/main/assets/delete_post_page.png?raw=true)
+
+-   Strona z ciekawostkami
+
+    ![Facts page](https://github.com/Szkolne-projekty/JJKotkiPhp/blob/main/assets/facts_page.png?raw=true)
