@@ -18,6 +18,8 @@ Projekt miał polegać na stworzeniu strony internetowej z elementami języka PH
 
 ## Zrzuty ekranu
 
+### Wersja desktopowa
+
 -   Strona początkowa
 
     ![Landing page](https://raw.githubusercontent.com/Szkolne-projekty/JJKotkiPhp/refs/heads/main/assets/landing.png)
@@ -45,3 +47,7 @@ Projekt miał polegać na stworzeniu strony internetowej z elementami języka PH
 -   Strona z ciekawostkami
 
     ![Facts page](https://github.com/Szkolne-projekty/JJKotkiPhp/blob/main/assets/facts_page.png?raw=true)
+
+### Wersja mobilna
+
+![Mobile](https://github.com/Szkolne-projekty/JJKotkiPhp/blob/main/assets/mobile/landing.png?raw=true)
