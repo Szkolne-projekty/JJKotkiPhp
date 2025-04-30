@@ -2,6 +2,25 @@
 
 Projekt miał polegać na stworzeniu strony internetowej z elementami języka PHP. Wybrałem temat kotki, bo są fajne i słodkie :)
 
+## Zawartość strony
+
+-   [Strona główna](https://kotki.jezyq.ovh/)
+-   [Strona z ciekawostkami](https://kotki.jezyq.ovh/facts)
+-   [Blog](https://kotki.jezyq.ovh/blog)
+    -   [Dodawanie postów](https://kotki.jezyq.ovh/post/create) - wymagane dodatkowe uprawnienia (create_post)
+    -   Edytowanie postów (/post/edit/{id}) - wymagane dodatkowe uprawnienia (edit_post)
+    -   Usuwanie postów (/post/delete/{id})
+-   [Zdjęcia kotków](https://kotki.jezyq.ovh/photos) - wymagane dodatkowe uprawnienia (delete_post)
+-   System logowania
+    -   [Logowanie](https://kotki.jezyq.ovh/login)
+    -   [Rejestracja](https://kotki.jezyq.ovh/register)
+    -   [Strona profilu](https://kotki.jezyq.ovh/profile)
+    -   System uprawnień bazowany na rolach (Administrator, Redaktor, Użytkownik)
+
+## Uruchamianie
+
+Aby uruchomić stronę należy użyć jakiegokolwiek webservera obsługującego php np. apache. Ja osobiście hostuje w dockerze, do czego można użyć tego [Dockerfile](https://github.com/Szkolne-projekty/JJKotkiPhp/blob/main/Dockerfile). Do obsługi bazy danych należy przekazać dane do instancji MySQL w zmiennych środowiskowych ([.env.example](https://github.com/Szkolne-projekty/JJKotkiPhp/blob/main/.env.example)). Struktura bazy danych: [dbStructure.sql](https://github.com/Szkolne-projekty/JJKotkiPhp/blob/main/dbStructure.sql)
+
 ## Użyte technologie
 
 -   [PHP](https://www.php.net/) (dosyć oczywiste)
