@@ -1,4 +1,4 @@
-# Projekt kotki
+# [Projekt kotki](https://kotki.jezyq.ovh/)
 
 Projekt miał polegać na stworzeniu strony internetowej z elementami języka PHP. Wybrałem temat kotki, bo są fajne i słodkie :)
 
